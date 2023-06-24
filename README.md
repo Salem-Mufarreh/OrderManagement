@@ -1,7 +1,6 @@
 # OrderManagementSystem
-Design and Implementation of Order Management Backend APIs using Spring Boot
-Based on the entities you mentioned ("product", "stock", "product order", "order", "customer"), here's an updated table with the main tasks and their respective subtasks for your assignment:
 
+## Work Plan
 | Step | Task                                      | Subtasks                                                                                    | Status              |
 |------|-------------------------------------------|---------------------------------------------------------------------------------------------|---------------------|
 | 1    | Understand the Database Diagram           | - Analyze the provided database diagram                                                     | :heavy_check_mark:  |
