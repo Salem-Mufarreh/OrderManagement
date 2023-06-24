@@ -28,7 +28,7 @@ public class UserEntity {
     )
     public Set<RolesEntity> roles;
     @OneToMany(mappedBy = "user")
-    public List<AuthenticationTokenEntity> authenticationTokens;
+    public Set<AuthenticationTokenEntity> authenticationTokens;
 
 
 }

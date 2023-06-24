@@ -5,16 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="143455ad-759e-46f2-ae97-a9e57ccacce1" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/AuthenticationTokenRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/CustomerRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/OrderRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/ProductOrderRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/ProductRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/RolesRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/StockRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/UserRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Exceptions/ResourceNotFound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/AuthenticationTokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/AuthenticationTokensImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/CustomerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/OrderImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/ProductImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/ProductOrderImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/RolesImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/StockImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/TokenImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/UserImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/ProductOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/RolesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/StockService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/UserEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +57,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -123,7 +134,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687599142958</updated>
-      <workItem from="1687599144033" duration="8865000" />
+      <workItem from="1687599144033" duration="15758000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687600573441</created>
