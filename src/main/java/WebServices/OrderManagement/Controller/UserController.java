@@ -1,2 +1,10 @@
-package WebServices.OrderManagement.Controller;public class UserController {
+package WebServices.OrderManagement.Controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/user")
+public class UserController {
+
 }

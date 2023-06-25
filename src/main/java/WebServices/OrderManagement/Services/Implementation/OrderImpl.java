@@ -9,6 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class OrderImpl implements OrderService {
@@ -20,20 +21,27 @@ public class OrderImpl implements OrderService {
 
     @Override
     public OrderEntity CreateOrder(OrderEntity order) {
+        OrderEntity newOrder = new OrderEntity();
         if(checkIfEntityParametersNullOrEmpty(order)){
-            OrderEntity newOrder = _OrderRepo.save(order);
+            try {
+                order.setId(new Random().nextLong());
+                newOrder = _OrderRepo.save(order);
+            }catch (Exception ex){
+                throw new ResponseStatusException(HttpStatus.CONFLICT,ex.getMessage());
+            }
+
             return newOrder;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"empty field");
     }
 
     @Override
     public OrderEntity GetOrderById(Long id) {
-        OrderEntity order = _OrderRepo.findById(id).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"Order Was Not Found"));
+        OrderEntity order = _OrderRepo.findById(id).orElseThrow();
         if (order != null){
             return order;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Order was not found");
     }
 
     @Override
@@ -42,7 +50,7 @@ public class OrderImpl implements OrderService {
         if (list != null){
             return list;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NO_CONTENT,"Orders are empty try adding a new one ");
     }
 
     @Override
@@ -50,7 +58,9 @@ public class OrderImpl implements OrderService {
         OrderEntity old = GetOrderById(id);
         if(old != null){
             old.setOrderedAt(order.getOrderedAt());
+/*
             old.setCustomer(order.getCustomer());
+*/
             order = _OrderRepo.save(old);
             return order;
         }
@@ -79,7 +89,7 @@ public class OrderImpl implements OrderService {
                     return false;
                 }
 
-                if (value instanceof String && ((String) value).isEmpty()) {
+                if (value instanceof String && ((String) value).isBlank()) {
                     return false;
                 }
             } catch (IllegalAccessException e) {

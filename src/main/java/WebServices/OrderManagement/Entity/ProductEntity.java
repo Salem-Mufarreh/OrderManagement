@@ -1,5 +1,6 @@
 package WebServices.OrderManagement.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,9 +18,11 @@ public class ProductEntity {
     public Double price;
     public Double vat;
     public Boolean stockAble;
-    @OneToMany(mappedBy = "StockProduct")
-    public List<StockEntity> stockEntries;
-    @OneToMany(mappedBy = "product")
-    public List<ProductOrderEntity> productOrder;
 
+   /* @OneToMany(mappedBy = "StockProduct")
+    public List<StockEntity> stockEntries;
+*/
+   @OneToMany(mappedBy = "product")
+   @JsonIgnore
+   private List<ProductOrderEntity> productOrders;
 }

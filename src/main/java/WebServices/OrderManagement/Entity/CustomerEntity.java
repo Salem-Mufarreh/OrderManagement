@@ -16,7 +16,7 @@ public class CustomerEntity {
     public String firstName;
     public String lastName;
     public LocalDate bornAt;
-    @OneToMany(mappedBy = "customer")
-    private List<OrderEntity> orders;
+   /* @OneToMany(mappedBy = "customer")
+    private List<OrderEntity> orders;*/
 
 }

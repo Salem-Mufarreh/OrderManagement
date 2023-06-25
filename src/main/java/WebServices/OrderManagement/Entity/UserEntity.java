@@ -1,5 +1,6 @@
 package WebServices.OrderManagement.Entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -27,6 +28,7 @@ public class UserEntity {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     public Set<RolesEntity> roles;
+    @JsonManagedReference
     @OneToMany(mappedBy = "user")
     public Set<AuthenticationTokenEntity> authenticationTokens;
 

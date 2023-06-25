@@ -25,17 +25,18 @@ public class CustomerImpl implements CustomerService {
            newEntity = _customerRepo.save(customer);
            return newEntity;
         }
-        return null;
+
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"empty field");
     }
 
     @Override
     public CustomerEntity GetCustomerById(Long id) {
         CustomerEntity entity = new CustomerEntity();
-        entity = _customerRepo.findById(id).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"Database is Empty"));
+        entity = _customerRepo.findById(id).orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"Customer is not found"));
         if(entity != null){
             return entity;
         }
-        return null;
+       return null;
     }
 
     @Override
@@ -45,7 +46,8 @@ public class CustomerImpl implements CustomerService {
             return entities;
         }
         catch (Exception ex){
-            return null;
+            throw new ResponseStatusException(HttpStatus.CONFLICT,ex.getMessage());
+
         }
     }
 
@@ -56,10 +58,11 @@ public class CustomerImpl implements CustomerService {
             old.setBornAt(customer.getBornAt());
             old.setFirstName(customer.getFirstName());
             old.setLastName(customer.getLastName());
+
              customer = _customerRepo.save(old);
              return customer;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Customer id was not found");
     }
 
     @Override
@@ -88,7 +91,7 @@ public class CustomerImpl implements CustomerService {
                     return false;
                 }
 
-                if (value instanceof String && ((String) value).isEmpty()) {
+                if (value instanceof String && ((String) value).isBlank()) {
                     return false;
                 }
             } catch (IllegalAccessException e) {
