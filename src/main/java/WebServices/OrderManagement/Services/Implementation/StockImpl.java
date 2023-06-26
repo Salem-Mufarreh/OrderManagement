@@ -1,7 +1,9 @@
 package WebServices.OrderManagement.Services.Implementation;
 
+import WebServices.OrderManagement.Entity.ProductEntity;
 import WebServices.OrderManagement.Entity.StockEntity;
 import WebServices.OrderManagement.Repositories.StockRepo;
+import WebServices.OrderManagement.Services.ProductService;
 import WebServices.OrderManagement.Services.StockService;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -13,18 +15,26 @@ import java.util.List;
 @Service
 public class StockImpl implements StockService {
     private final StockRepo _StockRepo;
-
-    public StockImpl(StockRepo stockRepo) {
+    private final ProductService _ProductService;
+    public StockImpl(StockRepo stockRepo, ProductService productService) {
         _StockRepo = stockRepo;
+        _ProductService = productService;
     }
 
     @Override
     public StockEntity CreateStock(StockEntity stock) {
-        if (checkIfEntityParametersNullOrEmpty(stock)){
-            StockEntity savedStock = _StockRepo.save(stock);
-            return savedStock;
+        try {
+            if (checkIfEntityParametersNullOrEmpty(stock)) {
+                ProductEntity product = _ProductService.GetProductById(stock.getStockProduct().getId());
+                stock.setStockProduct(product);
+                StockEntity savedStock = _StockRepo.save(stock);
+                return savedStock;
+            }
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Empty Fields in stock entity");
+
+        }catch (ResponseStatusException ex) {
+            throw new ResponseStatusException(ex.getStatusCode(),ex.getReason());
         }
-        return null;
     }
 
     @Override
@@ -33,7 +43,7 @@ public class StockImpl implements StockService {
         if (stock != null){
             return stock;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Stock was not found");
     }
 
     @Override
@@ -42,24 +52,25 @@ public class StockImpl implements StockService {
         if (list!=null){
             return list;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NO_CONTENT,"Stock is empty");
     }
 
     @Override
     public StockEntity UpdateStock(Long id, StockEntity stock) {
         StockEntity old = GetStockById(id);
-        if (old != null){
+
+        if (old != null && checkIfEntityParametersNullOrEmpty(stock)){
             old.setUpdatedAt(stock.getUpdatedAt());
             old.setQuantity(stock.getQuantity());
-            if(stock.getStockProduct() != null){
-                old.setStockProduct(stock.getStockProduct());
-            }
-
+            ProductEntity product = _ProductService.GetProductById(stock.getStockProduct().getId());
+            old.setStockProduct(product);
             stock = _StockRepo.save(old);
             return stock;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND,"stock was not found");
     }
+
+
 
     @Override
     public void DeleteStock(Long id) {
@@ -83,7 +94,7 @@ public class StockImpl implements StockService {
                     return false;
                 }
 
-                if (value instanceof String && ((String) value).isEmpty()) {
+                if (value instanceof String && ((String) value).isBlank()) {
                     return false;
                 }
             } catch (IllegalAccessException e) {
