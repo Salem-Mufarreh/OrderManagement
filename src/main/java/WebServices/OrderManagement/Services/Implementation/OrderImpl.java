@@ -37,7 +37,7 @@ public class OrderImpl implements OrderService {
 
     @Override
     public OrderEntity GetOrderById(Long id) {
-        OrderEntity order = _OrderRepo.findById(id).orElseThrow();
+        OrderEntity order = _OrderRepo.findById(id).orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND,"Order doesn't exists"));
         if (order != null){
             return order;
         }
@@ -64,7 +64,7 @@ public class OrderImpl implements OrderService {
             order = _OrderRepo.save(old);
             return order;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.CONFLICT,"Order doesn't exits");
     }
 
     @Override

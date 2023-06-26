@@ -1,6 +1,7 @@
 package WebServices.OrderManagement.Entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
@@ -12,24 +13,21 @@ import java.io.Serializable;
 @Data
 @Table
 @Entity
-public class ProductOrderEntity {
-
+public class ProductOrderEntity implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
 
     public int quantity;
     public double price;
     public double vat;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
     @ManyToOne
-    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "product_id",referencedColumnName = "id")
     private ProductEntity product;
 
     @ManyToOne
-    @JoinColumn(name = "order_id")
-    @JsonBackReference
+    @JoinColumn(name = "order_id",nullable = true)
     private OrderEntity order;
 
 

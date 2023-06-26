@@ -21,13 +21,14 @@ public class OrderEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id",nullable = true)
     public CustomerEntity customer;
 
     public LocalDateTime orderedAt;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "order")
-    private List<ProductOrderEntity> productOrders;
+    private Set<ProductOrderEntity> productOrders = new HashSet<>();
 
 }

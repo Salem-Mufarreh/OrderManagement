@@ -22,9 +22,9 @@ public class ProductImpl implements ProductService {
     public ProductEntity CreateProduct(ProductEntity product) {
         if (checkIfEntityParametersNullOrEmpty(product)){
             ProductEntity savedProduct = _ProductRepo.save(product);
-            return product;
+            return savedProduct;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.CONFLICT,"Error in creating product empty fields");
     }
 
     @Override
@@ -33,7 +33,7 @@ public class ProductImpl implements ProductService {
         if (product != null){
             return product;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Product was not found");
     }
 
     @Override
@@ -42,7 +42,7 @@ public class ProductImpl implements ProductService {
         if (list != null){
             return list;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NO_CONTENT,"empty product list ");
     }
 
     @Override
@@ -57,7 +57,7 @@ public class ProductImpl implements ProductService {
             product = _ProductRepo.save(old);
             return product;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND,"product was not found!");
     }
 
     @Override
@@ -65,6 +65,8 @@ public class ProductImpl implements ProductService {
         ProductEntity product = GetProductById(id);
         if(product != null){
             _ProductRepo.delete(product);
+        }else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"product was not found");
         }
 
     }
@@ -77,14 +79,19 @@ public class ProductImpl implements ProductService {
         for (Field field : fields) {
             field.setAccessible(true);
             try {
-                Object value = field.get(entity);
-
-                if (value == null) {
-                    return false;
+                if (field.getName().equals("productOrders")){
+                    continue;
                 }
+                else {
+                    Object value = field.get(entity);
 
-                if (value instanceof String && ((String) value).isEmpty()) {
-                    return false;
+                    if (value == null) {
+                        return false;
+                    }
+
+                    if (value instanceof String && ((String) value).isBlank()) {
+                        return false;
+                    }
                 }
             } catch (IllegalAccessException e) {
                 e.printStackTrace();

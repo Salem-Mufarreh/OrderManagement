@@ -28,7 +28,7 @@ public class ProductOrderImpl implements ProductOrderService {
             ProductOrderEntity SavedTransaction = _ProductOrderRepo.save(productOrder);
             return SavedTransaction;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.CONFLICT,"Product_Order has empty fields");
     }
 
     @Override
@@ -37,7 +37,7 @@ public class ProductOrderImpl implements ProductOrderService {
         if (productOrder != null){
             return productOrder;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Product_Order was not found");
     }
 
     @Override
@@ -46,7 +46,8 @@ public class ProductOrderImpl implements ProductOrderService {
         if (list != null){
             return list;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NO_CONTENT,"Product_Order is empty");
+
     }
 
     @Override
@@ -59,7 +60,7 @@ public class ProductOrderImpl implements ProductOrderService {
             productOrder = _ProductOrderRepo.save(old);
             return productOrder;
         }
-        return null;
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Product_Order was not found");
     }
 
     @Override
@@ -67,6 +68,9 @@ public class ProductOrderImpl implements ProductOrderService {
         ProductOrderEntity productOrder = GetOrderById(id);
         if (productOrder != null){
             _ProductOrderRepo.delete(productOrder);
+        }
+        else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product_Order was not found");
         }
     }
     public boolean checkIfEntityParametersNullOrEmpty(ProductOrderEntity entity) {
@@ -79,13 +83,17 @@ public class ProductOrderImpl implements ProductOrderService {
             field.setAccessible(true);
             try {
                 Object value = field.get(entity);
-
-                if (value == null) {
-                    return false;
+                if(field.getName().equals("product") || field.getName().equals("order")){
+                    continue;
                 }
+                else {
+                    if (value == null) {
+                        return false;
+                    }
 
-                if (value instanceof String && ((String) value).isEmpty()) {
-                    return false;
+                    if (value instanceof String && ((String) value).isBlank()) {
+                        return false;
+                    }
                 }
             } catch (IllegalAccessException e) {
                 e.printStackTrace();

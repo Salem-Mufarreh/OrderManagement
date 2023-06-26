@@ -1,10 +1,13 @@
 package WebServices.OrderManagement.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Table
@@ -16,7 +19,9 @@ public class CustomerEntity {
     public String firstName;
     public String lastName;
     public LocalDate bornAt;
-   /* @OneToMany(mappedBy = "customer")
-    private List<OrderEntity> orders;*/
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "customer")
+    private Set<OrderEntity> orders = new HashSet<>();
 
 }

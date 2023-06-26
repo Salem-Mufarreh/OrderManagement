@@ -5,33 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="143455ad-759e-46f2-ae97-a9e57ccacce1" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/ProductOrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL Diagram/diagram1.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/SQL Diagram/diagram1.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/generalController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/DTO/OrderDTO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/CustomerEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/OrderEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/ProductEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/ProductOrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/ProductOrderEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/ProductOrderEntityPK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/ProductOrderEntityPK.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Exceptions/ResourceNotFound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Exceptions/ResourceNotFound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/OrderRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/CustomerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/CustomerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/StockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/StockEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/OrderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/OrderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/ProductImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/ProductImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/ProductOrderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/ProductOrderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,30 +84,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Birzeit/Web Services/OrderManagement",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "9b85604ae3d187ff97c37014cd6cde93",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Birzeit/Web Services/OrderManagement&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;9b85604ae3d187ff97c37014cd6cde93&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -143,7 +140,10 @@
       <option name="presentableId" value="Default" />
       <updated>1687599142958</updated>
       <workItem from="1687599144033" duration="38451000" />
-      <workItem from="1687698449340" duration="1889000" />
+      <workItem from="1687698449340" duration="7653000" />
+      <workItem from="1687716160034" duration="4615000" />
+      <workItem from="1687769749836" duration="6642000" />
+      <workItem from="1687796160811" duration="597000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687600573441</created>
@@ -189,29 +189,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/OrderImpl.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/OrderController.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/OrderController.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/OrderImpl.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/OrderImpl.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/ProductImpl.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

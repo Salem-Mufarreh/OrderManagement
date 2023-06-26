@@ -1,7 +1,6 @@
 package WebServices.OrderManagement.Controller;
 
 import WebServices.OrderManagement.Entity.CustomerEntity;
-import WebServices.OrderManagement.Exceptions.ResourceNotFound;
 import WebServices.OrderManagement.Services.CustomerService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
