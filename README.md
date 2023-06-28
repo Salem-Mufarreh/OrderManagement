@@ -9,7 +9,7 @@
 |      |                                           | - Implement entity classes for "product", "stock", "product order", "order", and "customer" | :heavy_check_mark:           |
 |      |                                           | - Implement repositories for each entity                                                    | :heavy_check_mark:           |
 |      |                                           | - Implement business logic for managing the entities / Services                             | :heavy_check_mark: partially |
-|      |                                           | - Create RESTful API endpoints for CRUD operations                                          | :heavy_check_mark:           |
+|      |                                           | - Create REST-FUll API endpoints for CRUD operations                                        | :heavy_check_mark:           |
 | 3    | Dockerize Your Application                | - Create a Dockerfile for the application                                                   |                              |
 |      |                                           | - Define necessary dependencies and configurations                                          |                              |
 |      |                                           | - Build the Docker image                                                                    |                              |
@@ -30,5 +30,5 @@
 |      |                                           | - Implement validation techniques                                                           |                              |
 | 10   | Secure APIs and Use Swagger Documentation | - Implement signup and authentication APIs                                                  |                              |
 |      |                                           | - Use JWT for authentication and authorization                                              |                              |
-|      |                                           | - Integrate Swagger for API documentation                                                   |                              |
+|      |                                           | - Integrate Swagger for API documentation                                                   | :heavy_check_mark:           |
 | 11   | Complete the Assignment by the Deadline   | - Ensure all tasks are finished and requirements are met                                    |                              |
