@@ -4,6 +4,10 @@ import WebServices.OrderManagement.Entity.ProductEntity;
 import WebServices.OrderManagement.Entity.StockEntity;
 import WebServices.OrderManagement.Services.ProductService;
 import WebServices.OrderManagement.Services.StockService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +27,24 @@ public class StockController {
     }
 
     @GetMapping("/{id}")
+    @Operation(
+            description = "Get Product Stock",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "Product Stock was found",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    examples = {
+                                            @ExampleObject(
+                                                    value = "{ \"id\": 1, \"StockProduct\": { \"id\": 1, \"name\": \"HP\", \"reference\": \"Hp11\", \"price\": 20, \"vat\": 15, \"stockAble\": true }, \"quantity\": 2, \"updatedAt\": \"2023-06-24T03:00:00\", \"stockProduct\": { \"id\": 1, \"name\": \"HP\", \"reference\": \"Hp11\", \"price\": 20, \"vat\": 15, \"stockAble\": true } }"
+                                            )
+                                    }
+                            )
+                    ),
+                    @ApiResponse(responseCode = "404",ref = "notFoundApi")
+            }
+    )
     public ResponseEntity GetStock(@PathVariable Long id){
         try{
             StockEntity stock = _StockService.GetStockById(id);
@@ -32,6 +54,24 @@ public class StockController {
         }
     }
     @GetMapping("/")
+    @Operation(
+            description = "Get All Stocks Available",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "List of Stocks",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    examples = {
+                                            @ExampleObject(
+                                                    value = "[ { \"id\": 1, \"StockProduct\": { \"id\": 1, \"name\": \"HP\", \"reference\": \"Hp11\", \"price\": 20, \"vat\": 15, \"stockAble\": true }, \"quantity\": 2, \"updatedAt\": \"2023-06-24T03:00:00\", \"stockProduct\": { \"id\": 1, \"name\": \"HP\", \"reference\": \"Hp11\", \"price\": 20, \"vat\": 15, \"stockAble\": true } } ]"
+                                            )
+                                    }
+                            )
+                    ),
+                    @ApiResponse(responseCode = "404",ref = "notFoundApi")
+            }
+    )
     public ResponseEntity GetAll(){
         try {
             List<StockEntity> list = _StockService.GetAllStocks();
@@ -43,6 +83,24 @@ public class StockController {
     }
 
     @PostMapping("/")
+    @Operation(
+            description = "Create new Stock",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "stock was created",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    examples = {
+                                            @ExampleObject(
+                                                    value = "{ \"id\": 2, \"StockProduct\": { \"id\": 1, \"name\": \"HP\", \"reference\": \"Hp11\", \"price\": 20, \"vat\": 15, \"stockAble\": true }, \"quantity\": 2, \"updatedAt\": \"2023-06-24T03:00:00\", \"stockProduct\": { \"id\": 1, \"name\": \"HP\", \"reference\": \"Hp11\", \"price\": 20, \"vat\": 15, \"stockAble\": true } }"
+                                            )
+                                    }
+                            )
+                    ),
+                    @ApiResponse(responseCode = "400",ref = "emptyFields")
+            }
+    )
     public ResponseEntity Create(@Valid @RequestBody StockEntity stock){
         try {
             return ResponseEntity.ok(_StockService.CreateStock(stock));
@@ -52,6 +110,24 @@ public class StockController {
         }
     }
     @PutMapping("/{id}")
+    @Operation(
+            description = "Update Stock for product",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "stock was updated",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    examples = {
+                                            @ExampleObject(
+                                                    value = "{ \"id\": 1, \"StockProduct\": { \"id\": 3, \"name\": \"Lenovo\", \"reference\": \"LL11\", \"price\": 22, \"vat\": 11, \"stockAble\": true }, \"quantity\": 2, \"updatedAt\": \"2023-06-24T03:00:00\", \"stockProduct\": { \"id\": 3, \"name\": \"Lenovo\", \"reference\": \"LL11\", \"price\": 22, \"vat\": 11, \"stockAble\": true } }"
+                                            )
+                                    }
+                            )
+                    ),
+                    @ApiResponse(responseCode = "404",ref = "notFoundApi")
+            }
+    )
     public ResponseEntity UpdateStock(@PathVariable Long id,@Valid @RequestBody StockEntity stock){
         try {
             StockEntity saved = _StockService.UpdateStock(id,stock);
@@ -62,6 +138,7 @@ public class StockController {
         }
     }
     @PutMapping("/{id}/product/{productId}")
+
     public ResponseEntity AddStockProduct(@PathVariable Long id, @PathVariable Long productId){
         try {
             ProductEntity product = _ProductService.GetProductById(productId);
@@ -74,6 +151,24 @@ public class StockController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(
+            description = "Delete stock",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "stock was deleted",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    examples = {
+                                            @ExampleObject(
+                                                    value = "stock was deleted"
+                                            )
+                                    }
+                            )
+                    ),
+                    @ApiResponse(responseCode = "404",ref = "notFoundApi")
+            }
+    )
     public ResponseEntity Delete(@PathVariable Long id){
         try {
             _StockService.DeleteStock(id);

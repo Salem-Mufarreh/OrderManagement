@@ -2,14 +2,15 @@ package WebServices.OrderManagement.Controller;
 
 import WebServices.OrderManagement.Entity.CustomerEntity;
 import WebServices.OrderManagement.Services.CustomerService;
-import jakarta.validation.Valid;
+
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/customer")
@@ -48,7 +49,7 @@ public class CustomerController {
                 return new ResponseEntity(ex.getBody(),HttpStatus.BAD_REQUEST);
             }
         }
-        return ResponseEntity.ofNullable(customer);
+        return ResponseEntity.notFound().build();
     }
     @GetMapping("/")
     public ResponseEntity GetAllCustomers(){
@@ -58,7 +59,7 @@ public class CustomerController {
         }
         catch (ResponseStatusException ex){
 
-            return new ResponseEntity(ex.getBody(),(HttpStatusCode) ex.getStatusCode());
+            return new ResponseEntity(ex.getBody(), ex.getStatusCode());
         }
     }
     @PutMapping("/{id}")

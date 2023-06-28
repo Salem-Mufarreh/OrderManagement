@@ -3,6 +3,11 @@ package WebServices.OrderManagement.Controller;
 import WebServices.OrderManagement.Entity.ProductEntity;
 import WebServices.OrderManagement.Entity.ProductOrderEntity;
 import WebServices.OrderManagement.Services.ProductService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +26,27 @@ public class ProductController {
     }
 
     @GetMapping("/")
+    @Operation(
+            description = "Get Transaction by id",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "product was found",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    examples = {
+                                            @ExampleObject(
+                                                    value = "[ { \"id\": 1, \"name\": \"HP\", \"reference\": \"Hp11\", \"price\": 20, \"vat\": 15, \"stockAble\": true } ]"
+                                            )
+                                    }
+                            )
+                    ),
+                    @ApiResponse(
+                            responseCode = "404",
+                            ref = "notFoundApi"
+                    )
+            }
+    )
     public ResponseEntity GetAllProducts(){
         try {
             List<ProductEntity> list = _ProductService.GetAllProducts();
@@ -30,6 +56,27 @@ public class ProductController {
         }
     }
     @GetMapping("/{id}")
+    @Operation(
+            description = "Get product by id",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "product was found",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    examples = {
+                                            @ExampleObject(
+                                                    value = "{ \"id\": 1, \"name\": \"HP\", \"reference\": \"Hp11\", \"price\": 20, \"vat\": 15, \"stockAble\": true }"
+                                            )
+                                    }
+                            )
+                    ),
+                    @ApiResponse(
+                            responseCode = "404",
+                           ref = "notFoundApi"
+                    )
+            }
+    )
     public ResponseEntity GetProduct(@PathVariable Long id){
         try {
             ProductEntity product = _ProductService.GetProductById(id);
@@ -40,6 +87,23 @@ public class ProductController {
     }
 
     @PostMapping("/")
+    @Operation(
+            description = "Create new product ",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "product was found",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    examples = {
+                                            @ExampleObject(
+                                                    value = "{ \"id\": 2, \"name\": \"Lenovo\", \"reference\": \"LL11\", \"price\": 22, \"vat\": 11, \"stockAble\": true }"
+                                            )
+                                    }
+                            )
+                    )
+            }
+    )
     public ResponseEntity CreateProduct(@RequestBody @Valid ProductEntity product){
         try {
 
@@ -51,6 +115,24 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
+    @Operation(
+            description = "update product",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "product was updated",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    examples = {
+                                            @ExampleObject(
+                                                    value = "{ \"id\": 2, \"name\": \"Lenovo\", \"reference\": \"LL11\", \"price\": 22, \"vat\": 11, \"stockAble\": true }"
+                                            )
+                                    }
+                            )
+                    ),
+                    @ApiResponse(responseCode = "400",ref = "notFoundApi")
+            }
+    )
     public ResponseEntity UpdateProduct(@PathVariable Long id, @RequestBody @Valid ProductEntity product){
         try {
             ProductEntity newProduct = _ProductService.UpdateProduct(id,product);
@@ -61,6 +143,24 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(
+            description = "Delete Product",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "product was deleted",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    examples = {
+                                            @ExampleObject(
+                                                    value = "product was deleted"
+                                            )
+                                    }
+                            )
+                    ),
+                    @ApiResponse(responseCode = "404",ref = "notFoundApi")
+            }
+    )
     public ResponseEntity DeleteProduct(@PathVariable Long id){
         try {
             _ProductService.DeleteProduct(id);
