@@ -1,5 +1,6 @@
 package WebServices.OrderManagement.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,9 +14,10 @@ public class AuthenticationTokenEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
     public String token;
-    public LocalDateTime expiryDate;
+    public Boolean expired;
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     public UserEntity user;
 
 }

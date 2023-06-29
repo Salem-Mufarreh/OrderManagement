@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,7 @@ public class StockController {
     }
 
     @GetMapping("/{id}")
-    @Operation(
+    @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get Product Stock",
             responses = {
                     @ApiResponse(
@@ -54,7 +55,7 @@ public class StockController {
         }
     }
     @GetMapping("/")
-    @Operation(
+    @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get All Stocks Available",
             responses = {
                     @ApiResponse(
@@ -83,7 +84,7 @@ public class StockController {
     }
 
     @PostMapping("/")
-    @Operation(
+    @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Create new Stock",
             responses = {
                     @ApiResponse(
@@ -110,7 +111,7 @@ public class StockController {
         }
     }
     @PutMapping("/{id}")
-    @Operation(
+    @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Update Stock for product",
             responses = {
                     @ApiResponse(
@@ -137,21 +138,10 @@ public class StockController {
             return new ResponseEntity(ex.getBody(),ex.getStatusCode());
         }
     }
-    @PutMapping("/{id}/product/{productId}")
 
-    public ResponseEntity AddStockProduct(@PathVariable Long id, @PathVariable Long productId){
-        try {
-            ProductEntity product = _ProductService.GetProductById(productId);
-            StockEntity stock = _StockService.GetStockById(id);
-            stock.setStockProduct(product);
-            return ResponseEntity.ok(stock);
-        }catch (ResponseStatusException ex){
-            return new ResponseEntity(ex.getBody(),ex.getStatusCode());
-        }
-    }
 
     @DeleteMapping("/{id}")
-    @Operation(
+    @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Delete stock",
             responses = {
                     @ApiResponse(

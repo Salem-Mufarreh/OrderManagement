@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class ProductController {
     }
 
     @GetMapping("/")
-    @Operation(
+    @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get Transaction by id",
             responses = {
                     @ApiResponse(
@@ -56,7 +57,7 @@ public class ProductController {
         }
     }
     @GetMapping("/{id}")
-    @Operation(
+    @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get product by id",
             responses = {
                     @ApiResponse(
@@ -87,7 +88,7 @@ public class ProductController {
     }
 
     @PostMapping("/")
-    @Operation(
+    @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Create new product ",
             responses = {
                     @ApiResponse(
@@ -115,7 +116,7 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    @Operation(
+    @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "update product",
             responses = {
                     @ApiResponse(
@@ -143,7 +144,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    @Operation(
+    @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Delete Product",
             responses = {
                     @ApiResponse(

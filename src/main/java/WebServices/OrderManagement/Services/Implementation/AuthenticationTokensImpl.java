@@ -18,6 +18,25 @@ public class AuthenticationTokensImpl implements AuthenticationTokenService {
     }
 
     @Override
+    public AuthenticationTokenEntity GetToken(String token) {
+        AuthenticationTokenEntity tokenEntity = _AuthenticationTokenRepo.findByToken(token).get();
+        if (tokenEntity != null)
+        {
+            return tokenEntity;
+        }
+        return null;
+    }
+
+    @Override
+    public AuthenticationTokenEntity GetTokenByUser(Long id) {
+        AuthenticationTokenEntity token = _AuthenticationTokenRepo.findByUserId(id).get();
+        if (token != null){
+            return token;
+        }
+        return null;
+    }
+
+    @Override
     public AuthenticationTokenEntity CreatAuthenticationToken(AuthenticationTokenEntity tokenEntity) {
         if (tokenEntity!= null){
             tokenEntity = _AuthenticationTokenRepo.save(tokenEntity);
@@ -47,7 +66,7 @@ public class AuthenticationTokensImpl implements AuthenticationTokenService {
         if (token != null){
             token.setToken(tokenEntity.getToken());
             token.setUser(tokenEntity.getUser());
-            token.setExpiryDate(tokenEntity.getExpiryDate());
+            token.setExpired(tokenEntity.getExpired());
             tokenEntity = _AuthenticationTokenRepo.save(token);
             return tokenEntity;
         }

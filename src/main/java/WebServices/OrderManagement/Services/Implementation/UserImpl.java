@@ -71,8 +71,19 @@ public class UserImpl implements UserService {
 
     @Override
     public void DeleteUser(Long id) {
-
+        UserEntity user = GetUserById(id);
+        _UserRepo.delete(user);
     }
+
+    @Override
+    public UserEntity findUserByEmail(String username) {
+        var user = _UserRepo.findByUsername(username);
+        if (!user.isEmpty()){
+            return  user.get();
+        }
+        return null;
+    }
+
     public boolean checkIfEntityParametersNullOrEmpty(UserEntity entity) {
         if (entity == null) {
             return false;
@@ -98,4 +109,6 @@ public class UserImpl implements UserService {
 
         return true;
     }
+
+
 }

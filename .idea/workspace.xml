@@ -5,7 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="143455ad-759e-46f2-ae97-a9e57ccacce1" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/JWTAuthentication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/JWTService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/DTO/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/ProductOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/ProductOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/AuthenticationTokenEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/AuthenticationTokenEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/RolesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/RolesEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/AuthenticationTokenRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/AuthenticationTokenRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Repositories/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/AuthenticationTokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/AuthenticationTokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/AuthenticationTokensImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/AuthenticationTokensImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/TokenImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/UserImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,32 +108,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Birzeit/Web Services/OrderManagement",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.build.tools.auto.reload": "SELECTIVE",
-    "settings.editor.selected.configurable": "build.tools",
-    "spring.configuration.checksum": "9b85604ae3d187ff97c37014cd6cde93",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Birzeit/Web Services/OrderManagement&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.build.tools.auto.reload&quot;: &quot;SELECTIVE&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;9b85604ae3d187ff97c37014cd6cde93&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -138,7 +174,8 @@
       <workItem from="1687769749836" duration="6642000" />
       <workItem from="1687796160811" duration="4810000" />
       <workItem from="1687944812281" duration="13932000" />
-      <workItem from="1687966757518" duration="7392000" />
+      <workItem from="1687966757518" duration="7468000" />
+      <workItem from="1688044388558" duration="21438000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687600573441</created>
@@ -188,10 +225,11 @@
           <line>22</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.TypeNotPresentException" package="java.lang" />
-          <option name="timeStamp" value="17" />
-        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/UserController.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

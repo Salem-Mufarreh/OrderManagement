@@ -1,5 +1,6 @@
 package WebServices.OrderManagement.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -15,5 +16,6 @@ public class RolesEntity {
     public String roleName;
     public String description;
     @ManyToMany(mappedBy = "roles")
+    @JsonIgnore
     public Set<UserEntity> users;
 }

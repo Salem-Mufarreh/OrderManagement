@@ -10,4 +10,7 @@ public interface AuthenticationTokenService {
     List<AuthenticationTokenEntity> GetAllTokens();
     AuthenticationTokenEntity UpdateToken(Long id, AuthenticationTokenEntity tokenEntity);
     void DeleteToken(Long id);
+    AuthenticationTokenEntity GetTokenByUser(Long id);
+    AuthenticationTokenEntity GetToken(String token);
+
 }
