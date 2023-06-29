@@ -18,7 +18,7 @@
 |      |                                           | - Push the code to the GitHub repository                                                    | :heavy_check_mark:           |
 | 5    | Update the README.md                      | - Add instructions on building the application                                              |                              |
 |      |                                           | - Add instructions on creating and running the Docker image                                 |                              |
-| 6    | Prepare Postman Collection                | - Create a Postman collection                                                               |                              |
+| 6    | Prepare Postman Collection                | - Create a Postman collection                                                               | :heavy_check_mark:           |
 |      |                                           | - Add API requests and responses for testing each resource method                           | :heavy_check_mark:           |
 |      |                                           | - Export the collection and add it to the GitHub repository                                 |                              |
 | 7    | Add Documentation                         | - Add comments and explanations in the code                                                 |                              |
@@ -27,8 +27,8 @@
 |      |                                           | - Use appropriate annotations or configurations                                             | :heavy_check_mark:           |
 | 9    | Follow Best Practices and Constraints     | - Write clean and modular code                                                              |                              |
 |      |                                           | - Handle exceptions properly                                                                | :heavy_check_mark:           |
-|      |                                           | - Implement validation techniques                                                           |                              |
-| 10   | Secure APIs and Use Swagger Documentation | - Implement signup and authentication APIs                                                  |                              |
-|      |                                           | - Use JWT for authentication and authorization                                              |                              |
+|      |                                           | - Implement validation techniques                                                           | :heavy_check_mark:           |
+| 10   | Secure APIs and Use Swagger Documentation | - Implement signup and authentication APIs                                                  | :heavy_check_mark:           |
+|      |                                           | - Use JWT for authentication and authorization                                              | :heavy_check_mark:           |
 |      |                                           | - Integrate Swagger for API documentation                                                   | :heavy_check_mark:           |
 | 11   | Complete the Assignment by the Deadline   | - Ensure all tasks are finished and requirements are met                                    |                              |
