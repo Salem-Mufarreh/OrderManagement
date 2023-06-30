@@ -1,6 +1,14 @@
 # OrderManagementSystem
 This is a sample application for managing orders.
 
+<!-- TOC -->
+* [OrderManagementSystem](#ordermanagementsystem)
+  * [Prerequisites](#prerequisites)
+  * [building the application](#building-the-application)
+  * [Creating and Running the Docker Image](#creating-and-running-the-docker-image)
+  * [Work Plan](#work-plan)
+<!-- TOC -->
+
 ## Prerequisites
 Before building and running the application, ensure that you have the following dependencies installed:
 
@@ -9,7 +17,7 @@ Before building and running the application, ensure that you have the following 
 - Docker
 - Building the Application
 
-To build the application, follow these steps:
+## building the application
 
 1. Clone the repository to your local machine.
 
@@ -22,14 +30,14 @@ gradle build
 ```
 This command will compile the source code, run tests, and package the application into a JAR file.
 
-Creating and Running the Docker Image
+## Creating and Running the Docker Image
 To create and run the Docker image for the Order Management application, follow these steps:
 
-Ensure that Docker is installed and running on your machine.
+- Ensure that Docker is installed and running on your machine.
 
-Open a terminal/command prompt and navigate to the project directory.
+- Open a terminal/command prompt and navigate to the project directory.
 
-Build the Docker image using the provided Dockerfile:
+- Build the Docker image using the provided Dockerfile:
 
 ```
 docker build -t ordermanagement .
@@ -61,8 +69,8 @@ By following these instructions, you should be able to build the application and
 | 4    | Push Your Project to GitHub               | - Create a GitHub repository                                                                | :heavy_check_mark: |
 |      |                                           | - Initialize the repository and commit the project code                                     | :heavy_check_mark: |
 |      |                                           | - Push the code to the GitHub repository                                                    | :heavy_check_mark: |
-| 5    | Update the README.md                      | - Add instructions on building the application                                              |                    |
-|      |                                           | - Add instructions on creating and running the Docker image                                 |                    |
+| 5    | Update the README.md                      | - Add instructions on building the application                                              | :heavy_check_mark: |
+|      |                                           | - Add instructions on creating and running the Docker image                                 | :heavy_check_mark: |
 | 6    | Prepare Postman Collection                | - Create a Postman collection                                                               | :heavy_check_mark: |
 |      |                                           | - Add API requests and responses for testing each resource method                           | :heavy_check_mark: |
 |      |                                           | - Export the collection and add it to the GitHub repository                                 | :heavy_check_mark: |
