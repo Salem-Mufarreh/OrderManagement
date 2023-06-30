@@ -6,6 +6,12 @@ import WebServices.OrderManagement.Entity.AuthenticationTokenEntity;
 import WebServices.OrderManagement.Entity.UserEntity;
 import WebServices.OrderManagement.Services.AuthenticationTokenService;
 import WebServices.OrderManagement.Services.UserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,6 +46,24 @@ public class UserController {
     }
 
     @PostMapping("/signup")
+    @Operation(
+            description = "new user signup",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "new user was created",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    examples = {
+                                            @ExampleObject(
+                                                    value = "{ \"id\": 1, \"username\": \"admin@gmail.com\", \"password\": \"admin\", \"firstName\": \"admin\", \"lastName\": \"test\", \"createdAt\": \"2023-06-29T14:54:05.848\", \"enabled\": true, \"roles\": [], \"authenticationTokens\": [] }"
+                                            )
+                                    }
+                            )
+                    ),
+                    @ApiResponse(responseCode = "404",ref = "notFoundApi")
+            }
+    )
     public ResponseEntity<?> signup(@Valid @RequestBody UserEntity user) {
         try {
             UserEntity signedUser = _UserService.findUserByEmail(user.getUsername());
@@ -60,6 +84,31 @@ public class UserController {
     }
 
     @PostMapping("/login")
+    @Operation(
+            description = "Login user",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "user Logged in successfully",
+                            content = @Content(
+                                    mediaType = "application/json",
+                                    examples = {
+                                            @ExampleObject(
+                                                    value = "{ \"id\": 2, \"username\": \"john@example.com\", \"password\": \"password123\", \"firstName\": \"John\", \"lastName\": \"Doe\", \"createdAt\": \"2023-07-01T10:00:00\", \"enabled\": true, \"roles\": [], \"authenticationTokens\": [ { \"id\": 3, \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGV4YW1wbGUuY29tIiwiaWF0IjoxNjg4MDY3OTMxLCJleHAiOjE2ODgxNTQzMzF9.vJb8ZFE40uny34n3oRw7gyzTEQscPvG3RMJZJpyGsvA\", \"expired\": false } ] }"
+                                            )
+                                    }
+                            )
+                    ),
+                    @ApiResponse(responseCode = "401",description = "user was not found",content = @Content(
+                            mediaType = "application/json",
+                            examples = {
+                                    @ExampleObject(
+                                            value = "Invalid username or password"
+                                    )
+                            }
+                    ))
+            }
+    )
     public ResponseEntity login(@RequestBody UserEntity claimedUser) {
         try {
             UserEntity user = _UserService.findUserByEmail(claimedUser.getUsername());
