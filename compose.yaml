@@ -1,10 +1,24 @@
 services:
   mysql:
-    image: 'mysql:latest'
+    image: 'mysql-v2'
+    restart: 'always'
     environment:
-      - 'MYSQL_DATABASE=mydatabase'
-      - 'MYSQL_PASSWORD=secret'
-      - 'MYSQL_ROOT_PASSWORD=verysecret'
-      - 'MYSQL_USER=myuser'
+      - 'MYSQL_DATABASE=ordermanagementdb'
+      - 'MYSQL_ROOT_PASSWORD=root'
+    volumes:
+      - ./database_dump/ordermanagmentdb_authentication_token_entity.sql:/docker-entrypoint-initdb.d/ordermanagmentdb_authentication_token_entity.sql
+      - ./database_dump/ordermanagmentdb_customer_entity.sql:/docker-entrypoint-initdb.d/ordermanagmentdb_customer_entity.sql
+      - ./database_dump/ordermanagmentdb_order_entity.sql:/docker-entrypoint-initdb.d/ordermanagmentdb_order_entity.sql
+      - ./database_dump/ordermanagmentdb_product_entity.sql:/docker-entrypoint-initdb.d/ordermanagmentdb_product_entity.sql
+      - ./database_dump/ordermanagmentdb_product_order_entity.sql:/docker-entrypoint-initdb.d/ordermanagmentdb_product_order_entity.sql
+      - ./database_dump/ordermanagmentdb_product_order_entity_seq.sql:/docker-entrypoint-initdb.d/ordermanagmentdb_product_order_entity_seq.sql
+      - ./database_dump/ordermanagmentdb_roles_entity.sql:/docker-entrypoint-initdb.d/ordermanagmentdb_roles_entity.sql
+      - ./database_dump/ordermanagmentdb_stock_entity.sql:/docker-entrypoint-initdb.d/ordermanagmentdb_stock_entity.sql
+      - ./database_dump/ordermanagmentdb_user_entity.sql:/docker-entrypoint-initdb.d/ordermanagmentdb_user_entity.sql
+      - ./database_dump/ordermanagmentdb_user_role.sql:/docker-entrypoint-initdb.d/ordermanagmentdb_user_role.sql
     ports:
       - '3306'
+  project_image:
+    image: project_image
+    depends_on:
+      - mysql
