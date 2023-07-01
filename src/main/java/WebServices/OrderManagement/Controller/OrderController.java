@@ -16,6 +16,12 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
+/**
+ * This class is the controller for the Order Management web service.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting Orders.
+ */
+
 @RestController
 @RequestMapping("/api/order")
 public class OrderController {
@@ -27,6 +33,12 @@ public class OrderController {
         _CustomerService = customerService;
     }
 
+    /**
+     * This method returns order by id.
+     *
+     * @param id the id of the order.
+     * @return Order information.
+     */
     @GetMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get Orders By id",
@@ -59,6 +71,11 @@ public class OrderController {
             return new ResponseEntity(ex.getBody(),ex.getStatusCode());
         }
     }
+    /**
+     * This method returns a list of all available orders.
+     *
+     * @return a list of orders information.
+     */
     @GetMapping("/")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get All Orders",
@@ -87,6 +104,15 @@ public class OrderController {
         }
     }
 
+    /**
+     * This method creates an order.
+     *
+     * @param customerId the id of the customer.
+     * @param order the order information.
+     * @apiNote the api gets the customer and creates an order for him and return the order information.
+     * @exception ResponseStatusException return an exception to not found.
+     * @return order information.
+     */
     @PostMapping("/{customerId}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Create Order",
@@ -124,6 +150,16 @@ public class OrderController {
             return new ResponseEntity(ex.getBody(),ex.getStatusCode());
         }
     }
+
+    /**
+     * This method creates an order.
+     *
+     * @param id the id of the customer.
+     * @param  order the order information.
+     * @apiNote the api gets the customer and updates the order information.
+     * @exception ResponseStatusException return an exception to not found for customer or Order.
+     * @return order information.
+     */
     @PutMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Delete Product",
@@ -152,6 +188,15 @@ public class OrderController {
             return new ResponseEntity(ex.getBody(),ex.getStatusCode());
         }
     }
+
+    /**
+     * This method creates an order.
+     *
+     * @param id the id of the Order.
+     * @apiNote the api gets the order and deletes it.
+     * @exception ResponseStatusException return an exception to not found.
+     * @return delete confirmation message.
+     */
     @DeleteMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Delete Order",

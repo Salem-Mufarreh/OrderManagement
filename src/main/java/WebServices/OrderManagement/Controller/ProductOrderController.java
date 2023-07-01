@@ -3,7 +3,6 @@ package WebServices.OrderManagement.Controller;
 import WebServices.OrderManagement.Entity.OrderEntity;
 import WebServices.OrderManagement.Entity.ProductEntity;
 import WebServices.OrderManagement.Entity.ProductOrderEntity;
-import WebServices.OrderManagement.Services.CustomerService;
 import WebServices.OrderManagement.Services.OrderService;
 import WebServices.OrderManagement.Services.ProductOrderService;
 import WebServices.OrderManagement.Services.ProductService;
@@ -18,7 +17,11 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Random;
+/**
+ * This class is the controller for the Product_Order Management web service.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting Product_Order.
+ */
 
 @RestController
 @RequestMapping("/api/transaction")
@@ -32,6 +35,14 @@ public class ProductOrderController {
         _OrderService = orderService;
     }
 
+    /**
+     * This method retrieves a product_order information.
+     *
+     * @param id the id of the product_order.
+     * @apiNote the api gets the product_order .
+     * @exception ResponseStatusException return an exception to not found.
+     * @return Product_order information.
+     */
     @GetMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get Product_Order by Id",
@@ -59,6 +70,14 @@ public class ProductOrderController {
             return new ResponseEntity(ex.getBody(),ex.getStatusCode());
         }
     }
+
+    /**
+     * This method Updates a product information.
+     *
+     * @apiNote the api gets the list of product_order.
+     * @exception ResponseStatusException return an exception to conflict empty list.
+     * @return A list of Product_Orders information.
+     */
     @GetMapping("/")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get All product_Orders",
@@ -86,6 +105,16 @@ public class ProductOrderController {
             return new ResponseEntity(ex.getBody(),ex.getStatusCode());
         }
     }
+    /**
+     * This method creates a new product information.
+     *
+     * @param orderId the id of the order.
+     * @param productId the id of the product.
+     * @param productOrder the information of the product order.
+     * @apiNote the api gets the order, product and creates a new product_order.
+     * @exception ResponseStatusException return an exception to not found.
+     * @return Product_order information.
+     */
     @PostMapping("/order/{orderId}/product/{productId}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Create Product_Order",
@@ -121,6 +150,15 @@ public class ProductOrderController {
         }
     }
 
+    /**
+     * This method Updates a product information.
+     *
+     * @param id the id of the product_order.
+     * @param productOrder the product_order information.
+     * @apiNote the api gets the product_order and updates it.
+     * @exception ResponseStatusException return an exception to not found.
+     * @return Product_order information.
+     */
     @PutMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Update Product_Order",
@@ -148,6 +186,16 @@ public class ProductOrderController {
             return new ResponseEntity(ex.getBody(),ex.getStatusCode());
         }
     }
+
+
+    /**
+     * This method Updates a product information.
+     *
+     * @param id the id of the product_order.
+     * @apiNote the api gets the product_order and deletes it.
+     * @exception ResponseStatusException return an exception to not found.
+     * @return delete confirmation message.
+     */
     @DeleteMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Delete Product_order",

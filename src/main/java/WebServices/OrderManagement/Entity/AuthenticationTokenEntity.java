@@ -4,8 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
+/**
+ * This class represents an authentication token.
+ *
+ * The class stores the token, the user, and the expiration date.
+ */
 @Data
 @Table
 @Entity

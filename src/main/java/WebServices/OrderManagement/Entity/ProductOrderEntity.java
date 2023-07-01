@@ -1,15 +1,16 @@
 package WebServices.OrderManagement.Entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.io.Serializable;
 
+/**
+ * @author Salem Mufarreh
+ * This class represents a product_Order linkage table many-to-many relation.
+ *
+ * The class stores the product_Order's ID, quantity, price,vat, product id, and order id.
+ * **/
 @Data
 @Table
 @Entity

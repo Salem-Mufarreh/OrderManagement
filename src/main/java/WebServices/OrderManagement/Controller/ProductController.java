@@ -1,22 +1,23 @@
 package WebServices.OrderManagement.Controller;
 
 import WebServices.OrderManagement.Entity.ProductEntity;
-import WebServices.OrderManagement.Entity.ProductOrderEntity;
 import WebServices.OrderManagement.Services.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * This class is the controller for the Product Management web service.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting Products.
+ */
 @RestController
 @RequestMapping("/api/product")
 public class ProductController {
@@ -26,6 +27,13 @@ public class ProductController {
         _ProductService = productService;
     }
 
+    /**
+     * This method retrieve a list of all products.
+     *
+     * @apiNote the api gets the all products.
+     * @exception ResponseStatusException return an exception to conflict the product table is empty.
+     * @return A list of all products.
+     */
     @GetMapping("/")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get Transaction by id",
@@ -56,6 +64,15 @@ public class ProductController {
             return new ResponseEntity(ex.getBody(),ex.getStatusCode());
         }
     }
+
+    /**
+     * This method retrieve a Product by id.
+     *
+     * @param id the id of the product.
+     * @apiNote the api gets the product information.
+     * @exception ResponseStatusException return an exception to not found.
+     * @return Product information.
+     */
     @GetMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get product by id",
@@ -87,6 +104,14 @@ public class ProductController {
         }
     }
 
+    /**
+     * This method creates a Product.
+     *
+     * @param product the product information.
+     * @apiNote creates a new product in the database.
+     * @exception ResponseStatusException return an exception to any error that it catches mostly conflict.
+     * @return the new product information.
+     */
     @PostMapping("/")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Create new product ",
@@ -115,6 +140,15 @@ public class ProductController {
         }
     }
 
+    /**
+     * This method Updates a product information.
+     *
+     * @param id the id of the product.
+     * @param product the product information.
+     * @apiNote the api gets the order and updates it.
+     * @exception ResponseStatusException return an exception to not found.
+     * @return Product information.
+     */
     @PutMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "update product",
@@ -143,6 +177,14 @@ public class ProductController {
         }
     }
 
+    /**
+     * This method deletes a product.
+     *
+     * @param id the id of the product.
+     * @apiNote the api gets the product and deletes it.
+     * @exception ResponseStatusException return an exception to not found.
+     * @return delete confirmation message.
+     */
     @DeleteMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Delete Product",

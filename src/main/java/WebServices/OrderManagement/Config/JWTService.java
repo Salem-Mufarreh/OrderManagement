@@ -15,6 +15,17 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+/**
+ * This class provides methods for managing JSON Web Tokens (JWTs).
+ *
+ * The class uses the JWT library to generate and verify JWTs.
+ *
+ * The following methods are provided:
+ *
+ * * `generateToken()`: Generates a JWT for the specified user.
+ * * `verifyToken()`: Verifies a JWT and returns the user if the token is valid.
+ * * `getSecretKey()`: Returns the secret key used to sign JWTs.
+ */
 
 @Service
 public class JWTService {

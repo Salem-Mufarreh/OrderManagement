@@ -1,6 +1,5 @@
 package WebServices.OrderManagement.Controller;
 
-import WebServices.OrderManagement.Entity.ProductEntity;
 import WebServices.OrderManagement.Entity.StockEntity;
 import WebServices.OrderManagement.Services.ProductService;
 import WebServices.OrderManagement.Services.StockService;
@@ -15,6 +14,11 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+/**
+ * This class is the controller for the Stock Management web service.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting Stocks.
+ */
 
 @RestController
 @RequestMapping("/api/stock")
@@ -27,6 +31,14 @@ public class StockController {
         _ProductService = productService;
     }
 
+    /**
+     * This method retrieves stock information.
+     *
+     * @param id the id of the product.
+     * @apiNote the api gets the stock information.
+     * @exception ResponseStatusException return an exception to not found.
+     * @return stock information.
+     */
     @GetMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get Product Stock",
@@ -54,6 +66,14 @@ public class StockController {
             return new ResponseEntity(ex.getBody(),ex.getStatusCode());
         }
     }
+
+    /**
+     * This method retrieves A list of stocks.
+     *
+     * @apiNote the api get all available stocks.
+     * @exception ResponseStatusException return an exception to conflict the list is empty.
+     * @return A list of Socks information.
+     */
     @GetMapping("/")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get All Stocks Available",
@@ -83,6 +103,14 @@ public class StockController {
         }
     }
 
+    /**
+     * This method creates a new stock.
+     *
+     * @param stock the stock information.
+     * @apiNote the api creates a new stock information.
+     * @exception ResponseStatusException return an exception.
+     * @return the newly created stock.
+     */
     @PostMapping("/")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Create new Stock",
@@ -110,6 +138,16 @@ public class StockController {
             return new ResponseEntity(ex.getBody(),ex.getStatusCode());
         }
     }
+
+    /**
+     * This method Updates stock information.
+     *
+     * @param id the id of the product.
+     * @param stock the product information.
+     * @apiNote the api gets the stock and updates it.
+     * @exception ResponseStatusException return an exception to not found.
+     * @return stock information.
+     */
     @PutMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Update Stock for product",
@@ -139,7 +177,14 @@ public class StockController {
         }
     }
 
-
+    /**
+     * This method deletes stock information.
+     *
+     * @param id the id of the product.
+     * @apiNote the api gets the stock and deletes it.
+     * @exception ResponseStatusException return an exception to not found.
+     * @return delete confirmation message.
+     */
     @DeleteMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Delete stock",

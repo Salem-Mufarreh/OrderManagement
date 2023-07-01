@@ -9,7 +9,11 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.lang.reflect.Field;
 import java.util.List;
-
+/**
+ * This class implements the ProductService interface.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting prodcuts.
+ */
 @Service
 public class ProductImpl implements ProductService {
     private final ProductRepo _ProductRepo;

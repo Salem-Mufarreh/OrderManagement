@@ -2,21 +2,23 @@ package WebServices.OrderManagement.Controller;
 
 import WebServices.OrderManagement.Entity.CustomerEntity;
 import WebServices.OrderManagement.Services.CustomerService;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.http.HttpStatus;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-
 import java.util.List;
 import jakarta.validation.Valid;
 
+/**
+ * This class is the controller for the Customer Management web service.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting customers.
+ */
 @RestController
 @RequestMapping("/api/customer")
 public class CustomerController {
@@ -25,7 +27,12 @@ public class CustomerController {
     public CustomerController(CustomerService customerService) {
         _CustomerService = customerService;
     }
-
+    /**
+     * This method returns customer by id.
+     *
+     * @param id the id of the customer.
+     * @return customer information.
+     */
     @GetMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get customer by id",
@@ -57,7 +64,12 @@ public class CustomerController {
         }
         return ResponseEntity.badRequest().build();
     }
-
+    /**
+     * This method creates a new customer.
+     *
+     * @param customer The customer to create.
+     * @return The created customer.
+     */
     @PostMapping("/")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Create Customer",
@@ -92,6 +104,12 @@ public class CustomerController {
         }
         return ResponseEntity.notFound().build();
     }
+    /**
+     * This method return a list of all customers.
+     *
+     *
+     * @return A list of All Customers.
+     */
     @GetMapping("/")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get all customers",
@@ -121,6 +139,14 @@ public class CustomerController {
             return new ResponseEntity(ex.getBody(), ex.getStatusCode());
         }
     }
+
+    /**
+     * This method updates a customer information.
+     *
+     * @param id the id of the customer.
+     * @param customer the new information of the customer
+     * @return customer information.
+     */
     @PutMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Update customer information",
@@ -150,6 +176,12 @@ public class CustomerController {
         }
     }
 
+    /**
+     * This method deletes a customer.
+     *
+     * @param id the id of the customer.
+     * @return customer was deleted.
+     */
     @DeleteMapping("/{id}")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "delete customer",

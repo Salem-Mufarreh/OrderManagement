@@ -11,7 +11,11 @@ import org.springframework.web.server.ResponseStatusException;
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Set;
-
+/**
+ * This class implements the RolesService interface.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting Roles.
+ */
 @Service
 public class RolesImpl implements RolesService {
     private final RolesRepo _RolesRepo;

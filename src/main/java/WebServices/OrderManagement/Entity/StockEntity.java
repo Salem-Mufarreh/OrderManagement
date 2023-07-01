@@ -1,13 +1,17 @@
 package WebServices.OrderManagement.Entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
+
+/**
+ * @author Salem Mufarreh
+ * This class represents a stock.
+ *
+ * The class stores the stock's ID, product, quantity, and update time.
+ * **/
 @Data
 @Table
 @Entity

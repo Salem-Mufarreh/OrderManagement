@@ -1,14 +1,17 @@
 package WebServices.OrderManagement.Entity;
 
-import WebServices.OrderManagement.DTO.UserDTO;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.Data;
-
 import jakarta.persistence.*;
+import lombok.Data;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Set;
 
+
+/**
+ * @author Salem Mufarreh
+ * This class represents a user.
+ *
+ * The class stores the user's ID, username, password, first name, last name, created time, is active, tokens, and roles.
+ * **/
 @Data
 @Table
 @Entity

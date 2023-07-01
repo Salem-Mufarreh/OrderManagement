@@ -6,7 +6,37 @@
   <component name="ChangeListManager">
     <list default="true" id="143455ad-759e-46f2-ae97-a9e57ccacce1" name="Changes" comment="init">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/JWTAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/JWTAuthentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/JWTService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/JWTService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/MappingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/MappingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/ProductOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/ProductOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/DTO/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/AuthenticationTokenEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/AuthenticationTokenEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/CustomerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/OrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/OrderEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/ProductEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/ProductEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/ProductOrderEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/ProductOrderEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/ProductOrderEntityPK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/ProductOrderEntityPK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/RolesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/RolesEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/StockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/StockEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/AuthenticationTokensImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/AuthenticationTokensImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/CustomerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/CustomerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/OrderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/OrderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/ProductImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/ProductImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/ProductOrderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/ProductOrderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/RolesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/RolesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/StockImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/StockImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/UserDetailsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/UserImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +254,7 @@
       <workItem from="1687966757518" duration="7468000" />
       <workItem from="1688044388558" duration="21788000" />
       <workItem from="1688120358645" duration="12522000" />
-      <workItem from="1688134996992" duration="116000" />
+      <workItem from="1688134996992" duration="5764000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1687600573441</created>
@@ -272,7 +302,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/WebServices/OrderManagement/Services/Implementation/ProductImpl.java</url>
-          <line>22</line>
+          <line>26</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>

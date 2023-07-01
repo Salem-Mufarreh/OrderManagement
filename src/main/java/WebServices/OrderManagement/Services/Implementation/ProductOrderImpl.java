@@ -11,7 +11,11 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.lang.reflect.Field;
 import java.util.List;
-
+/**
+ * This class implements the Product_OrderService interface.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting product_orders.
+ */
 @Service
 public class ProductOrderImpl implements ProductOrderService {
     private final ProductOrderRepo _ProductOrderRepo;

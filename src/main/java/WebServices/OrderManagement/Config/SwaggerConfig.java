@@ -12,8 +12,16 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
-
-import java.util.Collections;
+/**
+ * This class is used to configure the OpenAPI / swagger v3.
+ *
+ * The class defines two responses:
+ *
+ * * `404 Not Found`: This response is returned when the requested resource is not found.
+ * * `200 OK - Empty Body`: This response is returned when the requested resource is empty.
+ *
+ * The class also defines the security schema for swagger, which is of type `bearerAuth`.
+ */
 
 @OpenAPIDefinition
 @Configuration
@@ -21,12 +29,14 @@ import java.util.Collections;
 public class SwaggerConfig {
     @Bean
     public OpenAPI baseOpenAPI(){
+        /** 404 not found **/
         ApiResponse notFoundApi = new ApiResponse().content(new Content()
                 .addMediaType(MediaType.APPLICATION_JSON_VALUE,
                 new io.swagger.v3.oas.models.media.MediaType()
                         .addExamples("default",new Example()
                         .value("{ \"type\": \"about:blank\", \"title\": \"Not Found\", \"status\": 404, \"detail\": \" Not Found\", \"instance\": \"Path\" }")))
         );
+        /** 400 bad request **/
         ApiResponse emptyFields = new ApiResponse().content(new Content()
                 .addMediaType(MediaType.APPLICATION_JSON_VALUE,
                         new io.swagger.v3.oas.models.media.MediaType()

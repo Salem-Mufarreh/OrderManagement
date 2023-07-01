@@ -13,6 +13,17 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/**
+ * This class configures the security for the Order Management web service.
+ *
+ * The class uses Spring Security to configure authentication and authorization.
+ *
+ * The following security features are configured:
+ *
+ * * Authentication using JSON Web Tokens (JWTs).
+
+ */
+
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity

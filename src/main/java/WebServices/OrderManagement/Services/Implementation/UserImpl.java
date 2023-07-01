@@ -13,6 +13,11 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * This class implements the UserService interface.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting users.
+ */
 @Service
 public class UserImpl implements UserService {
     private final UserRepo _UserRepo;

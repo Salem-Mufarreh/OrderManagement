@@ -10,6 +10,11 @@ import org.springframework.web.server.ResponseStatusException;
 import java.lang.reflect.Field;
 import java.util.List;
 
+/**
+ * This class implements the CustomerService interface.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting customers.
+ */
 @Service
 public class CustomerImpl implements CustomerService {
     private final CustomerRepo _customerRepo;

@@ -8,7 +8,12 @@ import lombok.Data;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
-
+/**
+ * @author Salem Mufarreh
+ * This class represents a customer.
+ *
+ * The class stores the customer's ID, username, password, and email address.
+ * **/
 @Data
 @Table
 @Entity

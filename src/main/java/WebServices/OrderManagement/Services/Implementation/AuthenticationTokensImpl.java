@@ -8,7 +8,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-
+/**
+ * This class implements the AuthenticationTokenService interface.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting Token.
+ */
 @Service
 public class AuthenticationTokensImpl implements AuthenticationTokenService {
     private final AuthenticationTokenRepo _AuthenticationTokenRepo;

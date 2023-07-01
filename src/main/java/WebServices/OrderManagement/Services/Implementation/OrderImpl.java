@@ -11,6 +11,11 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * This class implements the OrderService interface.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting orders.
+ */
 @Service
 public class OrderImpl implements OrderService {
     private final OrderRepo _OrderRepo;

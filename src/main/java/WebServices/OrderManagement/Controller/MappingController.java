@@ -16,7 +16,12 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * This class is the controller for the Mapping Management web service.
+ *
+ * The class provides methods for retrieving mappings.
+ * It was used for testing purposes for swagger.
+ */
 @RestController
 @RequestMapping("/mapping")
 @ComponentScan
@@ -29,6 +34,11 @@ public class MappingController {
         this.handlerMapping = handlerMapping;
     }
 
+    /**
+     * This method returns all the mapping for the system.
+     *
+     * @return mapping for all links and apis.
+     */
     @GetMapping("/mappings")
     @Operation(security = {@SecurityRequirement(name = "bearerAuth")},
             description = "Get All mapping links found in this project it was used for testing",

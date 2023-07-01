@@ -1,15 +1,18 @@
 package WebServices.OrderManagement.Entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
+/**
+ * @author Salem Mufarreh
+ * This class represents a product.
+ *
+ * The class stores the product's ID, name, reference number, price, vat, and is it stockable .
+ * **/
 @Data
 @Table
 @Entity

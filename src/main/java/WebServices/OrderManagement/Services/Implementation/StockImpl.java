@@ -11,7 +11,11 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.lang.reflect.Field;
 import java.util.List;
-
+/**
+ * This class implements the StockService interface.
+ *
+ * The class provides methods for creating, retrieving, updating, and deleting Stocks.
+ */
 @Service
 public class StockImpl implements StockService {
     private final StockRepo _StockRepo;

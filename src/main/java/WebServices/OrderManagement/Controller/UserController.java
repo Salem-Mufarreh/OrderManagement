@@ -9,9 +9,7 @@ import WebServices.OrderManagement.Services.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
-import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,14 +17,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
+
+/**
+ * This class is the controller for the User Management web service.
+ *
+ * The class provides methods for signup, and Login User.
+ */
+
 
 @RestController
 @RequestMapping("/api/user")
@@ -45,6 +51,14 @@ public class UserController {
         _TokenService = tokenService;
     }
 
+    /**
+     * This method creates a new user.
+     *
+     * @param user the user information.
+     * @apiNote the api gets the user information from the username and checks if it is available.
+     * @exception ResponseStatusException return an exception to usernamePassword is already been used.
+     * @return user information.
+     */
     @PostMapping("/signup")
     @Operation(
             description = "new user signup",
@@ -83,6 +97,16 @@ public class UserController {
         }
     }
 
+
+    /**
+     * This method Updates a product information.
+     *
+     * @param claimedUser the username and password of the user.
+     * @apiNote the api gets the user from the username and checks the passwords and add the roles if there is any
+     * for this demo the roles were not included. and the default role is admin where the user can access all apis.
+     * @exception UsernameNotFoundException return an exception to usernamePassword not found.
+     * @return user information.
+     */
     @PostMapping("/login")
     @Operation(
             description = "Login user",
